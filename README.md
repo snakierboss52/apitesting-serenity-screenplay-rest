@@ -16,10 +16,20 @@
 * Jenkinsfile pipeline para ejecutar sobre cualquier base de jenkins -> Buildea imagen, Crea contenedor, Se ejecutan las pruebas y limpia el workspace
 * Implementación de variables globales para disminuir la fragilidad de los test
 
-#Stack manejado
+# Stack manejado
+* Cucumber Serenity
 * Hamcrest
 * Java 11
 * Serenity Screenplay
 * Serenity Rest
 * Maven -> gestor de paquetes
 * Serenity Reports
+
+# Evidencias
+# Ejecución de los Test
+![img.png](img.png)
+# Reporte Serenity
+![img_1.png](img_1.png)
+# Pipeline
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
