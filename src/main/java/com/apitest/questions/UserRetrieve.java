@@ -1,7 +1,7 @@
 package com.apitest.questions;
 
-
 import com.apitest.models.Employee;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 

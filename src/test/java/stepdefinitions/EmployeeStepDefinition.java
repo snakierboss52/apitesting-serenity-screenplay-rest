@@ -57,9 +57,4 @@ public class EmployeeStepDefinition {
                 SeeInformationEmployee.inApp()
         );
     }
-
-
-
-
-
 }

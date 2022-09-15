@@ -14,7 +14,6 @@ public class Hook {
     @Before
     public void prepareStage() {
         user.whoCan(CallAnApi.at(URL_BASE));
-        //OnStage.setTheStage(new OnlineCast());
     }
 
 }

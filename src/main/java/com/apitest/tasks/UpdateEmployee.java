@@ -1,41 +1,40 @@
 package com.apitest.tasks;
 
 import com.apitest.models.EmployeeEntity;
-
 import io.restassured.http.ContentType;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.rest.interactions.Post;
+import net.serenitybdd.screenplay.rest.interactions.Put;
 
 import static com.apitest.utils.GlobalVariables.PATH_EMPLOYEE;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class CreateEmployee implements Task {
+public class UpdateEmployee implements Task {
 
-    private EmployeeEntity information;
+    private final EmployeeEntity information;
+    private final int id;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Post.to(
-                        PATH_EMPLOYEE
+                Put.to(
+                        PATH_EMPLOYEE + "/{id}"
                 ).with(
                         requestSpecification -> requestSpecification
                                 .contentType(ContentType.JSON)
+                                .pathParam("id", id)
                                 .body(information)
                 )
         );
     }
 
-    public static CreateEmployee withInformation(EmployeeEntity information){
-        return Tasks.instrumented(CreateEmployee.class, information);
+    public static UpdateEmployee withInformation(EmployeeEntity information, int id){
+        return Tasks.instrumented(UpdateEmployee.class, information, id);
     }
+
 }
